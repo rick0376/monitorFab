@@ -1,0 +1,172 @@
+/* Estilo Geral da Página */
+.paradasContainer {
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.filters label {
+  font-size: 1rem;
+  color: #555;
+}
+
+.filters input,
+.filters select {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 30%;
+  transition: border-color 0.3s ease;
+}
+
+.filters input:focus,
+.filters select:focus {
+  border-color: #007bff;
+}
+
+.filters input[type="date"],
+.filters select {
+  width: 22%;
+}
+
+.filters input[type="date"]:focus,
+.filters select:focus {
+  border-color: #0056b3;
+}
+
+.filters button {
+  padding: 8px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: #0056b3;
+}
+
+/* Lista de Paradas */
+.paradaList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.paradaItem {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.paradaItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.paradaItem h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.paradaItem p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.paradaItem p strong {
+  color: #333;
+}
+
+/* Exibição de uma mensagem de vazio caso não tenha paradas */
+.paradaList p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #999;
+}
+
+/* Estilo do botão de editar e excluir */
+.editMachineContainer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.submitButton,
+.deleteButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 48%;
+}
+
+.submitButton {
+  background-color: #28a745;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #218838;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: white;
+}
+
+.deleteButton:hover {
+  background-color: #c82333;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .paradaItem {
+    padding: 15px;
+  }
+
+  .submitButton,
+  .deleteButton {
+    width: 100%;
+  }
+}

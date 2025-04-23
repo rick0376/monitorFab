@@ -1,0 +1,26 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Maquina {
+  id           Int       @id @default(autoincrement())
+  nome         String
+  funcionando  Boolean   @default(true)  // Adicionando o campo "funcionando"
+  paradas      Parada[]
+}
+
+model Parada {
+  id                 Int       @id @default(autoincrement())
+  maquinaId          Int
+  horaInicio         DateTime
+  motivo             String
+  equipeAtuando      String
+  horaFinalizacao    DateTime?
+  observacao         String
+  maquina            Maquina   @relation(fields: [maquinaId], references: [id])
+}

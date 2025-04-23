@@ -1,0 +1,86 @@
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.h1 {
+  text-align: center;
+  font-size: 24px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitButton {
+  background-color: #464f5e;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.submitButton:hover {
+  background-color: #b1aaaa;
+}
+
+/* Estilo para o botão de excluir */
+.buttonContainer {
+  display: flex;
+  gap: 10px; /* Espaçamento entre os botões */
+  justify-content: space-between; /* Garantir que os botões fiquem separados igualmente */
+  margin-top: 20px; /* Distância do topo */
+}
+
+.submitButton,
+.deleteButton {
+  flex: 1; /* Ambos os botões ocuparão a mesma largura disponível */
+  padding: 10px 20px; /* Adiciona padding para deixar os botões maiores */
+  font-size: 16px; /* Tamanho da fonte dos botões */
+  border-radius: 5px; /* Borda arredondada */
+  cursor: pointer; /* Adiciona um ponteiro ao passar o mouse */
+}
+
+.submitButton {
+  background-color: #464f5e;
+  color: white;
+  border: none;
+}
+
+.deleteButton {
+  background-color: #bb1b16;
+  color: white;
+  border: none;
+}
+
+.deleteButton:hover {
+  background-color: #ee8181;
+}
