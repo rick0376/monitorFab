@@ -1,0 +1,226 @@
+.body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #606063 0%, #e0e0e6 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divHeader {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #101026 0%, #353599 100%);
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  max-width: 1200px;
+  width: 100%;
+  height: 100px;
+}
+
+.headerCenter {
+  align-items: center;
+  width: 80%;
+  background-color: transparent;
+}
+
+.divimg {
+  margin-right: 20px;
+  width: 130px;
+  height: 100%;
+  padding-left: 15px;
+  align-items: center;
+}
+
+.img {
+  width: 120px;
+  height: auto;
+}
+
+.h1Header {
+  font-size: 34px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+.page {
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(90deg, #353599 0%, #101026 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 70px;
+}
+
+.h2 {
+  color: white;
+  text-align: center;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button {
+  width: 250px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #c2c7c2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  color: #101026;
+  text-decoration: none;
+  display: inline-block;
+  border-left: 20px solid #4caf50;
+}
+
+.button:hover {
+  transform: scale(1.1);
+  background-color: #eaeaea;
+  color: rgb(5, 71, 68);
+  border-left: 20px solid #b0e4b1;
+}
+
+.button p {
+  font-size: 16px;
+}
+
+.modalContent h2 {
+  color: #101026;
+}
+.buttonAbrir {
+  width: 250px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #c2c7c2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  color: #101026;
+  text-decoration: none;
+  display: inline-block;
+  border-left: 40px solid #4caf50;
+}
+
+.buttonAbrir:hover {
+  transform: scale(1.1);
+  background-color: #b9e9c3;
+  color: rgb(5, 71, 68);
+  border-left: 20px solid #034e05;
+}
+
+.buttonAbrir p {
+  font-size: 16px;
+}
+
+.buttonFechar {
+  width: 250px;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #e99191;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  color: #101026;
+  text-decoration: none;
+  display: inline-block;
+  border-left: 40px solid #eb1010;
+}
+
+.buttonFechar:hover {
+  transform: scale(1.1);
+  background-color: #f0b1b1;
+  color: rgb(5, 71, 68);
+  border-left: 20px solid #850303;
+}
+
+.buttonFechar p {
+  font-size: 16px;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+  text-align: center;
+  min-width: 300px;
+}
+
+.modalLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.modalLink {
+  color: #1766cf;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+}
+
+.modalLink:hover {
+  color: #0a3b6b;
+  text-decoration: underline;
+}
+
+.closeButton {
+  background: #eee;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-top: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+}

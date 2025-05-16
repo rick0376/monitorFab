@@ -1,0 +1,271 @@
+.body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #606063 0%, #e0e0e6 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divHeader {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #101026 0%, #353599 100%);
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  max-width: 1024px;
+  width: 100%;
+  height: 100px;
+  color: #fff;
+}
+
+.divimg {
+  margin-right: 20px;
+  width: 130px;
+  height: 100%;
+  padding-left: 15px;
+  align-items: center;
+}
+
+.img {
+  width: 120px;
+  height: auto;
+}
+
+.headerCenter {
+  align-items: center;
+  width: 80%;
+  background-color: transparent;
+}
+
+.h1Header {
+  font-size: 34px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+.menuLink {
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+.menuItem {
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #2e6d30 0%, #78af7a 100%);
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background: linear-gradient(90deg, #c6e0c7 0%, #53f159 100%);
+  color: #101026;
+}
+
+.divMenu {
+  margin-right: 8px;
+}
+
+.contactForm {
+  width: 600px;
+  max-width: 600px;
+  margin: 20px;
+  padding: 20px;
+  background: linear-gradient(90deg, #353599 0%, #101026 100%);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1024px;
+  margin-top: 100px;
+  color: white;
+}
+
+.inputGroup {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.inputGroup input,
+.inputGroup .PhoneInput {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.inputGroup button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.inputGroup button:hover {
+  background-color: #0056b3;
+}
+
+.buttonGroup {
+  height: 40px;
+}
+
+.buttoAdicionar {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #2e6d30 0%, #7dc580 100%);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.buttoAdicionar:hover {
+  cursor: pointer;
+  transition: background 0.2s;
+  background: linear-gradient(90deg, #c6e0c7 0%, #53f159 100%);
+  color: #0c360d;
+}
+
+.contactList {
+  margin-top: 20px;
+}
+
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.contactDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contactItem p {
+  font-size: 14px;
+  color: #101026;
+  margin: 0;
+}
+
+.deleteButton {
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.deleteButton:hover {
+  color: darkred;
+}
+
+.status {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/**** Modal *****/
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modalBox {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 350px;
+  width: 90vw;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.18);
+  padding: 32px 24px 24px 24px;
+  text-align: center;
+  animation: modalIn 0.25s;
+}
+
+@keyframes modalIn {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modalTitleError {
+  color: #d32f2f;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.modalTitleSuccess {
+  color: #2e6d30;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.modalMessage {
+  color: #222;
+  font-size: 17px;
+  margin-bottom: 24px;
+}
+
+.modalButton {
+  background: linear-gradient(90deg, #2e6d30 0%, #7dc580 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modalButton:hover {
+  background: linear-gradient(90deg, #7dc580 0%, #2e6d30 100%);
+  color: #101026;
+}

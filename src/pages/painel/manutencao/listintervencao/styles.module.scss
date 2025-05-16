@@ -1,0 +1,736 @@
+.body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #606063 0%, #e0e0e6 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divHeader {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #101026 0%, #4646c7 100%);
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  max-width: 1024px;
+  width: 100%;
+  height: 100px;
+}
+
+.divimg {
+  margin-right: 20px;
+  width: 130px;
+  height: 100%;
+  padding-left: 15px;
+  align-items: center;
+}
+
+.img {
+  width: 120px;
+  height: 100px;
+}
+
+.headerCenter {
+  align-items: center;
+  width: 80%;
+  background-color: transparent;
+}
+
+.h1Header {
+  font-size: 34px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+.menuLink {
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+.menuItem {
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #2e6d30 0%, #6bb36d 100%);
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.menuItem:hover {
+  background: linear-gradient(90deg, #c6e0c7 0%, #53f159 100%);
+  color: #101026;
+}
+
+.container {
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #4646c7 0%, #101026 100%);
+  border-radius: 8px;
+  max-width: 1024px;
+  margin-top: 90px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+  background-color: rgb(224, 230, 227);
+  padding: 30px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.contactList {
+  margin-top: 20px;
+}
+
+.contactItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 12px;
+  width: 40%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.contactDetails {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contactItem p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+.deleteButton {
+  background: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.deleteButton:hover {
+  color: darkred;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background-color: rgb(224, 230, 227);
+  border-radius: 8px;
+  gap: 20px;
+}
+
+.filters label {
+  display: flex;
+  font-size: 1rem;
+  color: #101026;
+  font-weight: bold;
+  margin-right: 10px;
+  width: 80%;
+  align-items: center;
+}
+
+.filters input {
+  display: flex;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80px;
+  transition: border-color 0.3s ease;
+  color: #101026;
+  font-weight: bold;
+}
+
+.filters input:focus {
+  border-color: #007bff;
+}
+
+.filters input[type="date"] {
+  width: 100%;
+}
+
+.filters input[type="date"]:focus {
+  border-color: #0056b3;
+}
+/**************/
+
+.divDateStatus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 100%;
+  gap: 16px;
+}
+
+.dateFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.labelFilter {
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.inputDate {
+  width: 110px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 15px;
+  color: #261010;
+  border-radius: 6px;
+}
+
+.inputDateFim {
+  width: 110px;
+  padding: 5px;
+  margin-left: 20px;
+  margin-right: 5px;
+  font-size: 15px;
+  color: #261010;
+  border-radius: 6px;
+}
+
+.inputTime {
+  width: 80px;
+  padding: 5px;
+  margin: 0px;
+  font-size: 15px;
+  color: #261010;
+  border-radius: 6px;
+}
+
+.divFilters {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  width: 70%;
+}
+
+.divDate {
+  display: flex;
+  gap: 5px;
+}
+
+.paradaList {
+  display: flex;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: rgb(224, 230, 227);
+}
+
+.paradaItem {
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  color: #101026;
+  background-color: #fff;
+  width: 90%;
+  margin: 10px 0;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.paradaItem:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.paradaItem h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #101026;
+}
+
+.paradaItem p {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.paradaItem p strong {
+  color: #333;
+}
+
+.observacaoText {
+  display: inline-block;
+  max-width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.paradaList p {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #101026;
+}
+
+.divButton {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: #ff0015;
+}
+
+.divButtonStatus {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  gap: 10px;
+}
+
+.divButtonStatus select {
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+.divButtonEnviar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 30%;
+}
+
+.divButtonEdit {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.buttonSearchWhats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  background: linear-gradient(90deg, #2e6d30 0%, #6bb36d 100%);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    transition: background 0.2s;
+    background: linear-gradient(90deg, #c6e0c7 0%, #53f159 100%);
+    color: #0c360d;
+  }
+}
+
+.icon {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonText {
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.buttonSearch {
+  font-weight: bold;
+  font-size: 18px;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #101026 0%, #4646c7 100%);
+  padding: 15px 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.buttonSearch:hover {
+  cursor: pointer;
+  transition: background 0.2s;
+  background: linear-gradient(90deg, #5f6fff 0%, #353599 100%);
+  color: white;
+}
+
+.buttonCode {
+  font-weight: bold;
+  font-size: 18px;
+  height: 100%;
+  width: 40%;
+  background-color: #0e0ea3;
+  padding: 15px 20px;
+  margin-top: 20px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.buttonCode:hover {
+  background-color: #0e64c0;
+}
+
+.buttonMens {
+  font-weight: bold;
+  font-size: 18px;
+  height: 100%;
+  width: 40%;
+  background-color: #0e0ea3;
+  padding: 15px 20px;
+  margin-top: 20px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.buttonMens:hover {
+  background-color: #0e64c0;
+}
+
+.divQRCode {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .h1Header {
+    font-size: 28px;
+  }
+
+  .divFilters {
+    display: flex;
+    gap: 10px;
+    width: 60%;
+  }
+
+  .divDate {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 984px) {
+  .h1Header {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .filters {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+  }
+
+  .divFilters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 691px) {
+  .divButtonStatus label {
+    display: none;
+  }
+
+  .divButtonStatus select {
+    .h1Header {
+      font-size: 20px;
+      color: white;
+      font-weight: 600;
+      text-align: center;
+    }
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 535px) {
+  .container {
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 80px;
+    width: 100%;
+    margin-right: 10px;
+  }
+
+  .filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: 10px;
+  }
+
+  .divFilters {
+    display: flex;
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 0px;
+    align-items: center;
+  }
+
+  .divDate {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 0px;
+  }
+
+  .divButtonEnviar {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .buttonSearch {
+    margin-top: 0px;
+    padding: 10px;
+  }
+
+  .paradaItem {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 495px) {
+  .h1Header {
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .menuItem {
+    font-size: 16px;
+  }
+
+  .paradaItem {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .paradaList {
+    align-items: center;
+  }
+
+  .paradaItem p {
+    font-size: 0.9rem;
+  }
+  .labelFilter {
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 10px;
+    color: #fff;
+  }
+
+  .inputDateFim {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 478px) {
+  .h1Header {
+    font-size: 15px;
+    color: white;
+    font-weight: 300;
+    text-align: left;
+  }
+
+  .menuItem {
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .labelFilter {
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 10px;
+    color: #fff;
+  }
+
+  .inputDate {
+    width: 90px;
+    padding: 5px;
+    margin: 5px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputDateFim {
+    width: 90px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 5px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputTime {
+    width: 70px;
+    padding: 5px;
+    margin: 0px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 428px) {
+  .dateFilter {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .labelFilter {
+    font-weight: bold;
+    font-size: 12px;
+    margin-right: 10px;
+    color: #fff;
+  }
+
+  .inputDate {
+    width: 90px;
+    padding: 5px;
+    margin: 5px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputDateFim {
+    width: 90px;
+    padding: 5px;
+    margin-left: 15px;
+    margin-right: 5px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputTime {
+    width: 65px;
+    padding: 5px;
+    margin: 0px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .divButtonEnviar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
+  }
+
+  .buttonSearchWhats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .icon {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .buttonText {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+  }
+}

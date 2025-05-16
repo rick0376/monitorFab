@@ -1,0 +1,570 @@
+.body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #606063 0%, #e0e0e6 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/**************** Início Header************************/
+.divHeader {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #101026 0%, #4646c7 100%);
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  max-width: 1200px;
+  width: 100%;
+  height: 100px;
+}
+
+.divimg {
+  margin-right: 20px;
+  width: 130px;
+  height: 100%;
+  padding-left: 15px;
+  align-items: center;
+}
+
+.img {
+  width: 120px;
+
+  height: auto;
+}
+
+.headerCenter {
+  align-items: center;
+  width: 80%;
+  background-color: transparent;
+}
+
+.h1Header {
+  font-size: 34px;
+  color: white;
+  font-weight: 300;
+  text-align: center;
+}
+
+.divAtualiza {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+
+.divAtualiza label {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.divAtualiza select {
+  margin-top: 5px;
+  border-radius: 6px;
+}
+
+.menuLink {
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+.menuItem {
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background: #dee7de;
+  color: #101026;
+}
+/****************Fim Header************************/
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  background: linear-gradient(90deg, #4646c7 0%, #101026 100%);
+  padding: 20px;
+  padding-top: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 90px;
+}
+
+.sectionTitle {
+  background: linear-gradient(90deg, #0975f0 0%, #86a6ca 100%);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: rgb(250, 250, 255);
+  font-weight: bold;
+  text-align: center;
+}
+
+.machineList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.machineItem {
+  width: 250px;
+  padding: 20px;
+  background-color: #c7c2c2;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  font-weight: bold;
+}
+
+.machineItem:hover {
+  transform: scale(1.2);
+  background-color: #eaeaea;
+}
+
+.machineItem p {
+  font-size: 16px;
+  color: #101026;
+  margin: 10px 0;
+}
+
+.green {
+  border-left: 20px solid #4caf50;
+  background-color: #d0dfd4;
+}
+
+.red {
+  border-left: 20px solid #f44336;
+  background-color: #e0c9c6;
+}
+
+.divh1center1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/****************Início Modal************************/
+.modalContent {
+  background: #d0dfd4;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  outline: none;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalBody {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.closeButton {
+  font-size: 45px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #a00b0b;
+  font-weight: bold;
+}
+
+.modalBody {
+  font-size: 16px;
+  color: #101026;
+}
+
+.divDateStatus {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.dateFilter {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.labelFilter {
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 10px;
+  color: #261010;
+}
+
+.inputDate {
+  width: 110px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 15px;
+  color: #261010;
+  border-radius: 6px;
+}
+
+.inputDateFim {
+  width: 110px;
+  padding: 5px;
+  margin-left: 10px;
+  margin-right: 5px;
+  font-size: 15px;
+  color: #261010;
+  border-radius: 6px;
+}
+
+.inputTime {
+  width: 80px;
+  padding: 5px;
+  margin: 0px;
+  font-size: 15px;
+  color: #261010;
+  border-radius: 6px;
+}
+//falta .statusFilter
+
+.statusFilter {
+  margin-left: 0px;
+}
+
+.labelStatus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.selectStatus {
+  width: 120px;
+  padding: 5px;
+  margin-left: 5px;
+  font-size: 15px;
+  color: #261010;
+  border-radius: 6px;
+}
+//falta paradaList
+
+.paradaItem {
+  margin-bottom: 15px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 4px solid #101026;
+}
+
+.paradaItem p {
+  margin: 5px 0;
+}
+
+.paradaItem:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.observacaoWrapper {
+  margin-top: 0.5rem;
+}
+
+.observacaoText {
+  white-space: pre-line;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  max-height: 20em;
+  overflow-y: auto;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.buttonSearch {
+  background: linear-gradient(90deg, #104179 0%, #388beb 100%);
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.buttonSearch:hover {
+  background: linear-gradient(90deg, #5f6fff 0%, #353599 100%);
+  font-size: 20px;
+}
+
+.buttonList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 935px) {
+  .dateFilter {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .labelFilter {
+    font-weight: bold;
+    font-size: 16px;
+
+    color: #261010;
+  }
+
+  .inputDate {
+    width: 110px;
+    padding: 5px;
+    font-size: 15px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputDateFim {
+    width: 110px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputTime {
+    width: 80px;
+    padding: 5px;
+    margin: 0px;
+    font-size: 15px;
+    color: #261010;
+    border-radius: 6px;
+  }
+  //falta .statusFilter
+
+  .labelStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 16x;
+  }
+
+  .selectStatus {
+    width: 120px;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 15px;
+    color: #261010;
+    border-radius: 6px;
+  }
+}
+@media (max-width: 691px) {
+  .h1Header {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+@media (max-width: 625px) {
+  .divDateStatus {
+    display: flex;
+    flex-direction: row;
+  }
+  .inputDate {
+    width: 90px;
+    padding: 5px;
+    font-size: 15px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputDateFim {
+    width: 90px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputTime {
+    width: 80px;
+    padding: 5px;
+    margin: 0px;
+    font-size: 15px;
+    color: #261010;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 605px) {
+  .divDateStatus {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+
+  .labelFilter {
+    font-size: 12px;
+  }
+  .inputDate {
+    width: 90px;
+    padding: 5px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputDateFim {
+    width: 90px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .inputTime {
+    width: 70px;
+    padding: 5px;
+    margin: 0px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+}
+
+@media (max-width: 584px) {
+  .statusFilter {
+    margin-left: 0px;
+  }
+  .labelStatus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-right: 5px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  .selectStatus {
+    width: 100px;
+    padding: 5px;
+    margin-left: 5px;
+    font-size: 12px;
+    color: #261010;
+    border-radius: 6px;
+  }
+
+  .divAtualiza label {
+    font-size: 12px;
+  }
+  .divAtualiza select {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 532px) {
+  .divDateStatus {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .labelFilter {
+    margin-left: 5px;
+  }
+
+  .statusFilter {
+    display: flex;
+    align-items: end;
+  }
+  .labelStatus {
+    font-size: 12px;
+    margin-right: 0px;
+  }
+}
+
+@media (max-width: 490px) {
+  .h1Header {
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  .menuItem {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 438px) {
+  .h1Header {
+    font-size: 15px;
+    color: white;
+    font-weight: 300;
+    text-align: left;
+  }
+
+  .menuItem {
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .img {
+    width: 100px;
+    height: 100px;
+  }
+}

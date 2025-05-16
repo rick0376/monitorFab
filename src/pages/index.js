@@ -1,86 +1,104 @@
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import Head from "next/head";
-import { useState } from "react";
-import styles from "@/styles/Home.module.css";
+import styles from "./styles.module.scss";
+import logoImg from "/public/logo.png"; // Substitua pelo caminho correto da imagem do logo
+import Image from "next/image";
 
 export default function Home() {
-  const [nome, setNome] = useState("");
-  const [loading, setLoading] = useState(false); // Para controle de carregamento
-  const [message, setMessage] = useState(""); // Para mensagens de sucesso ou erro
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true); // Inicia o carregamento
-
-    try {
-      const res = await fetch("/api/maquinas", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ nome }),
-      });
-
-      if (res.ok) {
-        const maquina = await res.json();
-        setMessage(`Máquina ${maquina.nome} cadastrada com sucesso!`);
-      } else {
-        const error = await res.json();
-        setMessage(`Erro: ${error.message || "Erro ao cadastrar máquina"}`);
-      }
-    } catch (error) {
-      setMessage(`Erro de conexão: ${error.message}`);
-    } finally {
-      setLoading(false); // Finaliza o carregamento
-    }
-  };
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <>
+    <div className={styles.body}>
       <Head>
-        <title>Cadastro de Máquinas</title>
+        <title>Machine Control Panel</title>
         <meta name="description" content="Cadastrar máquinas no sistema" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
+      {/* Header */}
+      <div className={styles.divHeader}>
+        <header className={styles.header}>
+          <div className={styles.divimg}>
+            <Link href="/">
+              <Image
+                className={styles.img}
+                alt="Logo da LHPSYSTEMS"
+                src={logoImg}
+                priority={true}
+                quality={100}
+              />
+            </Link>
+          </div>
+          <div className={styles.headerCenter}>
+            <div>
+              <h1 className={styles.h1Header}>Machine Control</h1>
+            </div>
+          </div>
+        </header>
+      </div>
+
+      {/* Página de conteúdo */}
       <div className={styles.page}>
         <main className={styles.main}>
-          <h1>Cadastrar Máquina</h1>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-              placeholder="Nome da máquina"
-              required
-            />
-            <button type="submit" disabled={loading}>
-              {loading ? "Cadastrando..." : "Cadastrar"}
-            </button>
-          </form>
-          {message && <p>{message}</p>}{" "}
-          {/* Exibe a mensagem de sucesso ou erro */}
-          <div>
-            <h2>Navegação</h2>
-            <br />
-            <Link href="/painel/manutencao">Registrar Parada de Máquinas</Link>
-            <br />
-            <br />
-            <Link href="/painel/dashboard">Ir para o Dashboard</Link>
-            <br />
-            <br />
-            <Link href="/painel/dashboardT">Ir para o Dashboard2</Link>
-            <br />
-            <br />
-            <Link href="/painel/machinesList">Ir para o machinesList</Link>
-            <br />
-            <br />
-            <Link href="/painel/manutencao/maquinaoff">
-              Trabalhar nela Parada de Máquinas
+          <div className={styles.buttonContainer}>
+            <div
+              className={styles.button}
+              onClick={() => setShowModal(true)}
+              style={{ cursor: "pointer" }}
+            >
+              Controle Máquinas
+            </div>
+
+            <Link href="/painel/manutencao/intervencao">
+              <div className={styles.button}>Relatório Intervenções</div>
             </Link>
-            <br />
-            <br />
-            <Link href="/painel/paradas">Todas paradas</Link>
+
+            <Link href="/painel/manutencao/listintervencao">
+              <div className={styles.button}>Lista de Intervenções</div>
+            </Link>
+
+            <Link href="/painel/listmaquina">
+              <div className={styles.button}>Lista de Máquinas</div>
+            </Link>
+
+            <Link href="/painel/listsecao">
+              <div className={styles.button}>Lista de Seções</div>
+            </Link>
+
+            <Link href="/painel/cadastrar/contatos">
+              <div className={styles.button}>Contato</div>
+            </Link>
           </div>
         </main>
+
+        {showModal && (
+          <div className={styles.modalOverlay}>
+            <div className={styles.modalContent}>
+              <h2>Escolha o tipo de monitoramento:</h2>
+              <div className={styles.modalLinks}>
+                <Link
+                  href="/painel/controlmaquina/geral"
+                  className={styles.modalLink}
+                >
+                  <div className={styles.buttonAbrir}>Máquina Geral</div>
+                </Link>
+                <Link
+                  href="/painel/controlmaquina/secao"
+                  className={styles.modalLink}
+                >
+                  <div className={styles.buttonAbrir}>Máquina Seção</div>
+                </Link>
+              </div>
+              <button
+                className={styles.closeButton}
+                onClick={() => setShowModal(false)}
+              >
+                <div className={styles.buttonFechar}>Fechar</div>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
-    </>
+    </div>
   );
 }

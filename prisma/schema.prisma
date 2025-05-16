@@ -10,8 +10,10 @@ generator client {
 model Maquina {
   id           Int       @id @default(autoincrement())
   nome         String
-  funcionando  Boolean   @default(true)  // Adicionando o campo "funcionando"
+  funcionando  Boolean   @default(true)
+  secaoId      Int       // Campo adicionado
   paradas      Parada[]
+  secao        Secao     @relation(fields: [secaoId], references: [id]) // Relação adicionada
 }
 
 model Parada {
@@ -19,8 +21,22 @@ model Parada {
   maquinaId          Int
   horaInicio         DateTime
   motivo             String
-  equipeAtuando      String
+  equipeAtuando      String?
   horaFinalizacao    DateTime?
-  observacao         String
+  observacao         String?
+  tempoIntervencao   Int      // Novo campo para armazenar o tempo de intervenção (em segundos)
+  funcionando        Boolean
   maquina            Maquina   @relation(fields: [maquinaId], references: [id])
+}
+
+model Secao {
+  id           Int       @id @default(autoincrement())
+  nome         String
+  maquinas     Maquina[] // Relação inversa adicionada
+}
+
+model Contato {
+  id      Int    @id @default(autoincrement())
+  nome    String
+  celular String @unique
 }

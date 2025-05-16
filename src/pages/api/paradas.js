@@ -11,30 +11,101 @@ export default async function handler(req, res) {
       observacao,
     } = req.body;
 
+    // Validação reforçada (garante tipos corretos)
+    if (!maquinaId || !horaInicio || !motivo) {
+      return res
+        .status(400)
+        .json({ error: "Preencha Equipamento, Hora de Início e Motivo!" });
+    }
+
     try {
-      // Cria uma nova parada
+      // Converter horaInicio para Date mesmo se horaFinalizacao não existir
+      const horaInicioDate = new Date(horaInicio);
+      if (isNaN(horaInicioDate.getTime())) {
+        return res
+          .status(400)
+          .json({ error: "Formato de Hora de Início inválido" });
+      }
+
+      // Cálculo do tempoIntervencao (mesmo se horaFinalizacao for null)
+      let tempoIntervencao = 0; // Valor padrão 0 (nunca null)
+      if (horaInicio) {
+        const start = new Date(horaInicio).getTime();
+        const end = horaFinalizacao
+          ? new Date(horaFinalizacao).getTime()
+          : Date.now(); // Usa hora atual se não houver finalização
+        tempoIntervencao = Math.floor((end - start) / 1000);
+      }
+
+      // Criar parada com dados validados
       const parada = await prisma.parada.create({
         data: {
-          maquinaId: parseInt(maquinaId),
-          horaInicio: new Date(horaInicio),
+          maquina: {
+            connect: { id: parseInt(maquinaId) }, // Vincule explicitamente à máquina
+          },
+          horaInicio: horaInicioDate,
+          motivo: motivo.trim(),
+          equipeAtuando: equipeAtuando?.trim() || "",
+          horaFinalizacao: horaFinalizacao ? new Date(horaFinalizacao) : null,
+          observacao: observacao?.trim() || "",
+          tempoIntervencao,
+          funcionando: !!horaFinalizacao,
+        },
+      });
+
+      // Atualizar máquina (usar transação para atomicidade)
+      await prisma.$transaction([
+        prisma.maquina.update({
+          where: { id: parseInt(maquinaId) },
+          data: { funcionando: !!horaFinalizacao },
+        }),
+      ]);
+
+      return res.status(200).json(parada);
+    } catch (error) {
+      console.error("Erro detalhado:", error); // Log para diagnóstico
+      return res.status(500).json({
+        error: "Erro ao criar parada",
+        details: error.message, // Informação útil para debug
+      });
+    }
+  }
+
+  if (req.method === "PUT") {
+    const { id } = req.query;
+    const {
+      motivo,
+      horaInicio,
+      horaFinalizacao,
+      observacao,
+      funcionando,
+      maquinaId,
+      tempoIntervencao, // ← Campo que estava faltando
+    } = req.body;
+
+    try {
+      const paradaAtualizada = await prisma.parada.update({
+        where: { id: parseInt(id) },
+        data: {
           motivo,
-          equipeAtuando,
+          horaInicio: new Date(horaInicio),
           horaFinalizacao: horaFinalizacao ? new Date(horaFinalizacao) : null,
           observacao,
+          funcionando,
+          maquinaId: parseInt(maquinaId),
+          tempoIntervencao: parseInt(tempoIntervencao), // ← Aqui você inclui o campo
         },
       });
 
-      // Atualiza o status de funcionamento da máquina
-      const maquinaAtualizada = await prisma.maquina.update({
+      // Atualiza status da máquina
+      await prisma.maquina.update({
         where: { id: parseInt(maquinaId) },
-        data: {
-          funcionando: horaFinalizacao ? true : false, // Se horaFinalizacao for preenchido, a máquina é considerada funcionando
-        },
+        data: { funcionando },
       });
 
-      return res.status(200).json(parada); // Retorna a parada criada
+      return res.status(200).json(paradaAtualizada);
     } catch (error) {
-      return res.status(500).json({ error: "Erro ao criar a parada." });
+      return res.status(500).json({ error: "Erro ao atualizar parada" });
     }
   }
 

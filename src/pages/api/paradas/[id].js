@@ -17,17 +17,27 @@ export default async function handler(req, res) {
     }
   } else if (req.method === "PUT") {
     try {
-      const { motivo, horaInicio, horaFinalizacao, observacao, funcionando } =
-        req.body;
+      const {
+        motivo,
+        horaInicio,
+        horaFinalizacao,
+        observacao,
+        funcionando,
+        tempoIntervencao, // ← Campo adicionado
+        maquinaId,
+      } = req.body;
 
-      // Atualizar a parada
+      // Modifique o método PUT para incluir todos os campos:
       const updatedParada = await prisma.parada.update({
         where: { id: parseInt(id) },
         data: {
           motivo,
-          horaInicio,
-          horaFinalizacao,
+          horaInicio: new Date(horaInicio), // Converta para Date
+          horaFinalizacao: horaFinalizacao ? new Date(horaFinalizacao) : null,
           observacao,
+          funcionando,
+          maquinaId: parseInt(maquinaId), // Adicione esta linha
+          tempoIntervencao: parseInt(tempoIntervencao), // Adicione esta linha
         },
       });
 
@@ -36,7 +46,7 @@ export default async function handler(req, res) {
         await prisma.maquina.update({
           where: { id: updatedParada.maquinaId },
           data: {
-            funcionando: funcionando, // Atualiza o estado de funcionamento da máquina
+            funcionando: funcionando,
           },
         });
       }

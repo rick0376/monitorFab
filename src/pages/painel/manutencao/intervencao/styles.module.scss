@@ -1,0 +1,267 @@
+.body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, #606063 0%, #e0e0e6 100%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divHeader {
+  width: 100%;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(90deg, #101026 0%, #4646c7 100%);
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  max-width: 1024px;
+  width: 100%;
+  height: 100px;
+}
+
+.headerCenter {
+  align-items: center;
+  width: 80%;
+  background-color: transparent;
+}
+
+.menuLink {
+  margin-left: auto;
+  padding-right: 30px;
+}
+
+.menuItem {
+  font-size: 24px;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #2e6d30 0%, #78af7a 100%);
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.menuItem:hover {
+  background: linear-gradient(90deg, #c6e0c7 0%, #53f159 100%);
+  color: #101026;
+}
+
+.divimg {
+  margin-right: 20px;
+  width: 130px;
+  height: 100%;
+  padding-left: 15px;
+  align-items: center;
+}
+
+.img {
+  width: 120px;
+  height: 100px;
+}
+
+.h1Header {
+  font-size: 34px;
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.container {
+  width: 100%;
+  height: 80%;
+  min-width: 390px;
+  max-width: 1024px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  margin-top: 90px;
+  box-sizing: border-box;
+}
+
+.h1Container {
+  font-size: 28px;
+}
+
+.form {
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.label {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #101026;
+  display: block;
+  width: 100%;
+}
+
+.select,
+.input,
+.timePicker,
+.textarea {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.inputArea {
+  font-size: 16px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 10px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.inputCheck {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  justify-content: flex-start;
+  position: relative;
+  color: #101026;
+}
+
+.inputCheck input {
+  margin-right: 10px;
+}
+
+.inputCheck label {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.buttonSearch {
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(90deg, #4646c7 0%, #101026 100%);
+  padding: 15px 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.buttonSearch:hover {
+  cursor: pointer;
+  transition: background 0.2s;
+  background: linear-gradient(90deg, #5f6fff 0%, #353599 100%);
+  color: white;
+}
+
+.buttonContainerText {
+  display: flex;
+  justify-content: center;
+  width: 106%;
+  align-items: center;
+  margin-right: 5px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.modalButton {
+  padding: 10px 20px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #104179 0%, #388beb 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modalButton:hover {
+  background: linear-gradient(90deg, #5f6fff 0%, #353599 100%);
+  color: white;
+}
+
+@media (max-width: 680px) {
+  .h1Header {
+    font-size: 28px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+@media (max-width: 572px) {
+  .h1Header {
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+@media (max-width: 470px) {
+  .h1Header {
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .img {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+}
